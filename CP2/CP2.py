@@ -26,7 +26,7 @@ A1 = A.copy()
 ### Save the matrix B as A2
 ### Don't forget to use .copy()
 
-def change_row_cols(B:np.zeroes()):
+def change_row_cols(B):
     B[:,15] = B[:,15] * 0
     return B
 
