@@ -7,15 +7,14 @@ import numpy as np
 ### Don't forget to use .copy()
 
 def initializeArray():
-    rows = 5
-    cols = 6
+    rows = 20
+    cols = 21
     A = np.zeros((rows,cols))
     for idx1 in range(rows):
         num1 = idx1 + 1 # row placement num
         for idx2 in range(cols):
             num2 = idx2 + 1 # col placement num
             A[idx1,idx2] = 1/(num1*num2)
-        print()
     return A
 
 A = initializeArray()
@@ -32,25 +31,28 @@ def change_row_cols(B):
     return B
 
 B = A.copy()
-x = change_row_cols(B)
-print(x)
-
+A2 = change_row_cols(B)
 
 
 ### For A3, since we want the last few columns/rows you want to use negative
 ### values to go backwards through the circular queue (Week 1 Lecture 3)
 
+def get_rows_cols(C):
+    C = C[-3:,-5:]
+    return C
 
-
-
+C = B.copy()
+A3 = get_rows_cols(C)
 
 ### Set A4 as the 10th column of B (Week 1 Lecture 3)
 ### reshape it into a column vector
 
+def get_col(D):
+    D = D[: , 10:11]
+    return D
 
-
-
-
+D = B.copy()
+A4 = get_col(D)
 
 ### Problem 2
 ### For A5 and A6 it's exactly like Week 2 Theory lecture.
