@@ -32,7 +32,7 @@ def change_row_cols(B):
 
 B = A.copy()
 x = change_row_cols(B)
-print(x)
+# print(x)
 
 
 
@@ -59,41 +59,31 @@ def init_harmonic_series(size:int):
         harmonic = np.append(harmonic, [1/i])
     return harmonic
 
-# A5 = init_harmonic_series(20)
-# A6 = init_harmonic_series(200)
+A5 = init_harmonic_series(20)
+A6 = init_harmonic_series(200)
 
 ### For A7 through A10 you're still doing a Sum as you did for A5 and A6
 ### but now you want to break out of the loop when the sum surpasses 10
 ### for A7 and A8, and 20 for A9 and A10
 ### (very similar to Week 2 Lecture 2 Fibonacci)
 
-def harmonic_summation(size:int):
-    harmonic = np.array([])
-    summation = 0
-    for i in range(1,size+1):
-        harmonic = np.append(harmonic, [1/i])
-        summation = harmonic[i] + harmonic[i-1]
-    print(summation)
-    return summation    
-
-# harmonic_summation(10)
-
-
-
 def harmonic_sum(size:int):
-    summation = 0
-    i = 0
-    j = 0
-    while(summation <= size):
-        if (j % 100 == 0):
-            print(i)
-        summation = np.sum(init_harmonic_series(i))
+    harmonic = np.array([])
+    summation =  0
+    i=1
+    while summation <= size:
+        harmonic = np.append(harmonic, [1/i])
         i+=1
-        j+=1
-    return i-1, summation
+        summation += harmonic[len(harmonic) - 1]
+    return i,summation
 
-# A7 = harmonic_sum(10)
-# A8 = harmonic_sum(20)
+ans = harmonic_sum(10)
+A7 = ans[0]
+A8 = ans[1]
+ans = harmonic_sum(20)
+print("i made it here ---")
+A9 = ans[0]
+A10 = ans[1]
 
 
 ### Problem 3
@@ -113,11 +103,7 @@ def dds(r:float,x0:float,n:int):
     col = np.reshape(row, (1,100))
     return row,col
 
-
 ### Set N and x0 according to the assignment file
-
-
-
 
 ### For each of the next three set its respective r value.  Then set the
 ### vector x as the iterates of the logistic map using the output of the
