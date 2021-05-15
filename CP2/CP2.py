@@ -7,8 +7,8 @@ import numpy as np
 ### Don't forget to use .copy()
 
 def initializeArray():
-    rows = 20
-    cols = 21
+    rows = 5
+    cols = 6
     A = np.zeros((rows,cols))
     for idx1 in range(rows):
         num1 = idx1 + 1 # row placement num
@@ -27,12 +27,13 @@ A1 = A.copy()
 ### Don't forget to use .copy()
 
 def change_row_cols(B):
-    B[:,15] = B[:,15] * 0
+    B[:,16] = B[:,16] * 0
+    B[15,:] = B[15,:] * 0
     return B
 
 B = A.copy()
 x = change_row_cols(B)
-# print(x)
+print(x)
 
 
 
@@ -80,10 +81,10 @@ def harmonic_sum(size:int):
 ans = harmonic_sum(10)
 A7 = ans[0]
 A8 = ans[1]
-ans = harmonic_sum(20)
-print("i made it here ---")
-A9 = ans[0]
-A10 = ans[1]
+
+#ans = harmonic_sum(20)
+#A9 = ans[0]
+#A10 = ans[1]
 
 
 ### Problem 3
