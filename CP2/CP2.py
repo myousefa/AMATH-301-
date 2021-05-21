@@ -70,24 +70,36 @@ A6 = init_harmonic_series(200)
 ### for A7 and A8, and 20 for A9 and A10
 ### (very similar to Week 2 Lecture 2 Fibonacci)
 
+# def harmonic_sum(size:int):
+#     harmonic = np.array([])
+#     summation =  0
+#     i=1
+#     while summation <= size:
+#         harmonic = np.append(harmonic, [1/i])
+#         i+=1
+#         summation += harmonic[len(harmonic) - 1]
+#     return i,summation
+
 def harmonic_sum(size:int):
-    harmonic = np.array([])
-    summation =  0
-    i=1
-    while summation <= size:
-        harmonic = np.append(harmonic, [1/i])
+    sum = 0
+    i = 1
+    while sum <= size:
+        sum += 1/i
         i+=1
-        summation += harmonic[len(harmonic) - 1]
-    return i,summation
+    return i,sum
+
 
 ans = harmonic_sum(10)
 A7 = ans[0]
 A8 = ans[1]
+print(A7)
+print(A8)
 
-#ans = harmonic_sum(20)
-#A9 = ans[0]
-#A10 = ans[1]
-
+ans = harmonic_sum(20)
+A9 = ans[0]
+A10 = ans[1]
+print(A9)
+print(A10)
 
 ### Problem 3
 ### Create a function here (Week 2 Lecture 3).  The function will take r,
